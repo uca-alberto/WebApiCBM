@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CBMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="T_Clientes">
+    <Key>
+      <PropertyRef Name="Id_cliente" />
+    </Key>
+    <Property Name="Id_municipio" Type="int" />
+    <Property Name="Id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_departamento" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="smallint" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cedula" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Num_telefono" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Sexo" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Empleados">
+    <Key>
+      <PropertyRef Name="Id_empleado" />
+    </Key>
+    <Property Name="Id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_empleado" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="40" />
+    <Property Name="Cargo" Type="varchar" MaxLength="30" />
+    <Property Name="Cedula" Type="varchar" MaxLength="18" />
+    <Property Name="Activo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CBMModelStoreContainer">
+    <EntitySet Name="T_Clientes" EntityType="Self.T_Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Empleados" EntityType="Self.T_Empleados" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
